@@ -1,0 +1,11 @@
+fastapi==0.110.0
+uvicorn[standard]==0.29.0
+python-multipart==0.0.9
+python-dotenv==1.0.1
+
+# PDF parsing (we will use one of these)
+pdfplumber==0.10.3
+pypdf==4.2.0
+
+# Validation
+pydantic

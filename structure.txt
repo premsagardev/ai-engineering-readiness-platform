@@ -1,0 +1,33 @@
+ai-tech-mentor/
+│
+├── app/
+│   ├── main.py              # FastAPI entry point
+│   ├── api/
+│   │   ├── __init__.py
+│   │   ├── health.py        # Health check route
+│   │   └── resume.py        # Resume upload (later)
+│   │
+│   ├── core/
+│   │   ├── __init__.py
+│   │   └── config.py        # Env variables, settings
+│   │
+│   ├── services/
+│   │   ├── __init__.py
+│   │   ├── pdf_parser.py    # PDF → text logic (later)
+│   │   └── llm_parser.py    # AI parsing (later)
+│   │
+│   ├── schemas/
+│   │   ├── __init__.py
+│   │   └── resume.py        # Pydantic models
+│   │
+│   └── utils/
+│       ├── __init__.py
+│       └── text_cleaner.py  # Resume text cleanup
+│
+├── tests/
+│   └── test_health.py       # Optional, good signal
+│
+├── requirements.txt
+├── .env                     # API keys later
+├── .gitignore
+└── README.md

@@ -1,0 +1,64 @@
+# ======================
+# Python / Virtual Env
+# ======================
+venv/
+.env
+.env.*
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# ======================
+# OS / Editor Junk
+# ======================
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# ======================
+# Logs & Temp Files
+# ======================
+*.log
+logs/
+tmp/
+temp/
+uploads/
+parsed/
+
+# ======================
+# FastAPI / Uvicorn
+# ======================
+*.pid
+uvicorn.log
+
+# ======================
+# PDF / Document Artifacts
+# (Generated during parsing)
+# ======================
+*.pdf
+*.docx
+
+# ======================
+# AI / Secrets
+# ======================
+secrets/
+credentials/
+openai_key.txt
+
+# ======================
+# Test / Coverage
+# ======================
+.coverage
+htmlcov/
+pytest_cache/
+
+# ======================
+# Build / Distribution
+# ======================
+build/
+dist/
+*.egg-info/
