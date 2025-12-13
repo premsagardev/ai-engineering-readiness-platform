@@ -2,6 +2,7 @@ import shutil
 from fastapi import APIRouter, HTTPException, UploadFile, File, status
 from pathlib import Path
 from services.pdf_parser import extract_text_from_pdf
+from utils.text_cleaner import clean_text
 
 up_load_dir = Path("uploads")
 up_load_dir.mkdir(exist_ok = True)
@@ -33,8 +34,10 @@ async def upload_resume(file: UploadFile = File(...)):
     #     "location" : str(file_location)
     # }
     # parse and return
+    raw_text = extract_text_from_pdf(str(file_location))
+    cleaned_text = clean_text(raw_text)
     return {
         "message" : f"The file {file.filename} was Successfully uploaded",
         "location" : str(file_location),
-        "content" : extract_text_from_pdf(str(file_location))
+        "content" : cleaned_text
     }
