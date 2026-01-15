@@ -31,3 +31,78 @@ ai-tech-mentor/
 ├── .env                     # API keys later
 ├── .gitignore
 └── README.md
+
+
+JSON Structure
+
+{
+    "name" : "...", #rule
+    "email" : "...", #rule
+    "phone" : "...", #rule
+    "skills" : { #rule + LLM
+        "languages" : [],
+        "frameworks" : [],
+        "tools" : [],
+        "platforms" : []
+    },
+    "experience" : [ #rule + LLM
+        {
+            "company" : "",
+            "role" : "",
+            "duration" : "",
+            "description" : ""
+
+        }
+    ],
+    "education" : [ #rule 
+        {
+            "level" : "",
+            "year" : "",
+            "score" : "",
+            "achievements" : "" 
+        }
+    ],
+    "certifications" : [ #rule
+        {
+            "name" : "",
+            "year" : "",
+            "validity" : "",
+            "provider/uni" : ""
+        }
+    ],
+    "links" : { #rule
+        "linkedin" : "",
+        "x" : "",
+        "github" : ""
+    },
+    "projects" : [ #rule + LLM - sometime tech stacks need to be retrived from description
+        {
+            "title" : "",
+            "tech" : [],
+            "description" : "",
+            "github-link" : "",
+            "impact/outcome" : "" 
+        }
+    ],
+    "role" :  { #rule + LLM
+        "current-role" : "",
+        "target-role" : "",
+        "recommended-role" : ""    
+    }
+}
+
+Rule based : personel details, education and experience
+LLM Based : Role based on skill and experience, summary of experience and Projects 
+Both : review the output of Both to create valid output
+
+
+Pipeline
+
+step 1: Parse resume get RAW data
+step 2:  clean raw data, remove space and other things
+step 3: derive sections based on header
+step 4: pass the data to Rule based -> output will be only in form of defined schema
+step 5: use LLM to infer and get required data -> skill classification and roles education
+step 6: use dereived data from both layers to get final candidate information, validation -> handel missing values
+step 7: generate user skills, experience and project summaries
+step 8: final output saved for future use and state management(future addition and progress tracking)
