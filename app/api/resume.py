@@ -35,10 +35,10 @@ async def upload_resume(file: UploadFile = File(...)):
     # }
     # parse and return
     raw_text = extract_text_from_pdf(str(file_location))
-    sections = sections(raw_text)
+    section = sections(raw_text)
     
     return {
         "message" : f"The file {file.filename} was Successfully uploaded",
         "location" : str(file_location),
-        "content" : sections
+        "content" : section
     }
